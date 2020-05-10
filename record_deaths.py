@@ -25,7 +25,7 @@ data = [[x[0],x[-1]] for x in data]
 s = soup.find('div',{'id':'content'})
 retrieval_time = s.find('p').text
 retrieval_time = dparser.parse(retrieval_time,fuzzy=True)
-retrieval_time = retrieval_time.strftime('%m.%d.%Y %H:%M')
+retrieval_time = retrieval_time.strftime('%d.%m.%Y %H:%M')
 state_data = pd.DataFrame(data,columns=['Bundesland','Todesfälle'])
 state_data['Todesfälle'] = pd.to_numeric(state_data['Todesfälle'])
 state_to_abb = {'Baden-Württemberg':'BW','Bayern':'BY','Berlin':'BE', 'Brandenburg':'BB','Bremen':'HB','Hamburg':'HH','Hessen':'HE','Mecklenburg-Vorpommern':'MV',
